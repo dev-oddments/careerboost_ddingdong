@@ -7,12 +7,13 @@
  */
 
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import Calc from './components/Calc';
+import {StyleSheet, View} from 'react-native';
 
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text>boostcourse-ace</Text>
+      <Calc />
     </View>
   );
 };
@@ -20,8 +21,8 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    width: '100%',
+    paddingTop: '15%',
   },
 });
 
