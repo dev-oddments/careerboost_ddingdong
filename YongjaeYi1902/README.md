@@ -1,2 +1,81 @@
 # careerboost_ddingdong
 > 모바일 | Android/iOS: 계산기 어플리케이션 
+
+## What I do
+- UI
+  - 숫자 표시 화면
+  - 칸 19개 | 4 by 5
+    - C, CE, M, DEL, /, *, -, +, =, .
+    - 0 ~ 9 
+- 기능
+  - 초기화
+    - CE : 현재 값
+    - C : 모든 계산
+  - 숫자 입력
+    - 소수점 입력
+  - 사칙연산
+  - 결과 확인
+- 추가기능
+  - 숫자 표시화면에서 직접 칠 수 있도록 구현
+  - 메모리 기능 구현(mobx?)
+- CI나 배포 등 
+
+## React Native 학습
+- react : A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
+  - UI = View(State)
+- 환경구성
+  - `react-native init calculator`
+  - `cd calculator && npm i`
+  - prettier & lint
+    - `yarn add eslint@5.16.0 --exact -D`
+    - `.vscode/setting.json에 https://github.com/JeffGuKang/react-native-eslint-prettier-starter
+    - vscode extension에 Prettier설치
+      - command + shift + p 입력 후 Format Documnet하면 코드정렬 됨
+- es6
+  - let, const
+  - import, export
+  - arraw function
+    - `let add = (a, b) => a + b` 가 `let add = function(a, b) { return a + b}`임
+- Layout
+  - flex
+    - 크기를 비율로 설정하는 것
+    - `flexDirection` : row, column // 가로, 세로 배치
+    - `alignItems` : flex-start, center, flex-end, stretch // flexDirection과 수직한 방향으로 정렬
+    - `justifyContent` : space-between, space-around // flexDirection과 동일한 방향으로 정렬
+  - width, height
+    - 고정크기, %일 경우 상대적 크기
+- Componenet 
+  - Lifecycle
+    - Mounting : `componentWillMount()`, `componentDidMount()`
+    - Updating : `setState()`
+    - Unmounting : `shouldComponentUpdate()`
+  - props, state
+    - props
+    - state
+      - `setState()`는 컴포넌트의 state를 변경하는 API
+        - 비동기로 진행됨 // render시점과 별개로 동작해야 성능영향 x
+        - 상태가 변경된 직후에 필요한 작업은 `setState(nextState, callback)`의 `callback을 사용해야 함
+  - [HOC(Higher Order Component)](https://gist.github.com/sebmarkbage/ef0bf1f338a7182b6775)
+    - render 함수 내에서 사용하면 성능이 떨어짐
+  - 무 상태 컴포넌트
+    - 재사용성이 높음
+    - state가 없으며 컴포넌트를 완전한 함수로 정의
+  - 특수화
+    - 컴포넌트의 역할을 Specialize해 보다 명확한 컴포넌트로 만듬
+  - [Presentational & Container 컴포넌트](https://gist.github.com/chantastic/fc9e3853464dffdb1e3c)
+    - 데이터를 fetching 해야 할 경우
+    - Presentational 컴포넌트
+      - JSX를 이용한 마크업 존재
+      - render에 필요한 데이터는 이미 가지고 있다고 가정
+      - UI를 위한 state가 존재할 수 있음
+    - Container 컴포넌트
+      - JSX를 이용한 마크없이 거의 없음
+      - Ajax 요청, HOC 등을 이용해 render에 필요한 데이터를 Fetching
+      - 데이터 Fetching을 위한 state가 존재할 수 있음
+
+## 구현 방향
+- Style
+  - [Reference](https://www.lofree.co/products/digit-calculator)
+  - 구분을 위해 내부애서 선언된 함수명 앞에 언더바(_) 붙임
+- Logic
+- UI
