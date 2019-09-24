@@ -1,6 +1,10 @@
 # careerboost_ddingdong
 > 모바일 | Android/iOS: 계산기 어플리케이션 
 
+## What I did
+![Calc](https://tva1.sinaimg.cn/large/006y8mN6gy1g7ap4evi4xj30u01n81kx.jpg)
+- [Demo video](https://gfycat.com/illfatedrawhorsechestnutleafminer)
+
 ## What I do
 - UI
   - 숫자 표시 화면
