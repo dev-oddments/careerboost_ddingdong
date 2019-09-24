@@ -9,7 +9,7 @@ export default class Button extends Component {
           styles.inputButton,
           this.props.highlight ? styles.inputButtonHighlighted : null,
         ]}
-        underlayColor="#193441"
+        underlayColor="gray"
         onPress={this.props.onPress}>
         <Text style={styles.inputButtonText}>{this.props.value}</Text>
       </TouchableHighlight>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
   },
 
   inputButtonHighlighted: {
-    backgroundColor: '#193441',
+    backgroundColor: 'gray',
   },
 
   inputButtonText: {
