@@ -11,14 +11,14 @@
   - 초기화
     - CE : 현재 값
     - C : 모든 계산
+    - M : 메모리 
   - 숫자 입력
     - 소수점 입력
   - 사칙연산
   - 결과 확인
-- 추가기능
+- 추가적으로
   - 숫자 표시화면에서 직접 칠 수 있도록 구현
-  - 메모리 기능 구현(mobx?)
-- CI나 배포 등 
+  - CI나 배포 등 
 
 ## React Native 학습
 - react : A JAVASCRIPT LIBRARY FOR BUILDING USER INTERFACES
@@ -72,10 +72,38 @@
       - JSX를 이용한 마크없이 거의 없음
       - Ajax 요청, HOC 등을 이용해 render에 필요한 데이터를 Fetching
       - 데이터 Fetching을 위한 state가 존재할 수 있음
+- Lifecycle
+  - constructor : 생성자 메소드로서 컴포넌트가 처음 만들어 질 때 실행
+  - componentWillMount : 컴포넌트가 DOM 위에 만들어지기 전에 실행
+  - render : 컴포넌트 렌더링을 담당
+  - componentDidMount : 컴포넌트가 만들어지고 첫 렌더링을 다 마친 후 실행되는 메소드
+  - componentWillReceiveProps : 컴포넌트가 prop 을 새로 받았을 때 실행
+  - shouldComponentUpdate : prop 혹은 state 가 변경 되었을 때, 리렌더링을 할지 말지 정하는 메소드
+  - componentWillUpdate : 컴포넌트가 업데이트 되기 전에 실행
+    - this.setState() 사용시 무한루프
+  - componentDidUpdate : 컴포넌트가 리렌더링을 마친 후 실행
+  - componentWillUnmount : 컴포넌트가 DOM 에서 사라진 후 실행되는 메소드
 
 ## 구현 방향
 - Style
   - [Reference](https://www.lofree.co/products/digit-calculator)
   - 구분을 위해 내부애서 선언된 함수명 앞에 언더바(_) 붙임
+  - [shadow generator](https://ethercreative.github.io/react-native-shadow-generator/)
 - Logic
-- UI
+  - 원하는 문자의 갯수만큼 버튼을 렌더링
+  - 버튼 클릭시 함수 호출
+    - 버튼이 숫자를 표현하는가?
+      - Display에 표시된 숫자에 해당 숫자를 처리하여 표현
+    - 버튼이 기호를 표현하는가?
+      - 연산 
+        - `+` : 더하기 연산
+        - `-` : 뺄셈 연산
+        - `×` : 곱셈 연산
+        - `÷` : 나눗셈 연산
+      - `.` : 소숫점 아래 표현
+      - `=` : 결과 표현
+        - 그 전에 누른 버튼이 기호를 표현하는게 아닐경우
+      - `←` : 한 글자 지우기
+      - `M` : 현재 숫자 기억
+      - `C` : 현재 숫자 지우기
+      - `CE` : 초기화
